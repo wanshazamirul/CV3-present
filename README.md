@@ -1,4 +1,4 @@
-# CV3 · Enterprise Edition — showcase deck
+# CV3 · running today · showcase deck
 
 Single-file animated presentation. 18 slides, works offline.
 

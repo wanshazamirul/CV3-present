@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CV3 · Enterprise Edition</title>
+<title>CV3 · running today</title>
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0c121c">
-<meta name="description" content="CV3 Enterprise Edition: the AI partner engine for teams. Local-first, guardrails locked, markdown knowledge that compounds.">
-<meta property="og:title" content="CV3 · Enterprise Edition">
-<meta property="og:description" content="A memory that compounds. The AI partner your team keeps.">
+<meta name="description" content="CV3, running today: the AI partner engine with memory, search, skills and reviews.">
+<meta property="og:title" content="CV3 · running today">
+<meta property="og:description" content="The AI partner that runs our stack, running today.">
 <meta property="og:image" content="assets/icon-512.png">
 <meta property="og:type" content="website">
 <style>
@@ -117,7 +117,7 @@ h3{font-size:24px}
 .slide.active .sheet{animation:drift 7s ease-in-out infinite;animation-delay:var(--d,0s)}
 @keyframes drift{0%,100%{transform:translateY(0) rotate(var(--rot,0deg));opacity:.9}50%{transform:translateY(-14px) rotate(calc(var(--rot,0deg) + 1.5deg));opacity:1}}
 /* engine cards */
-.card{background:rgba(255,255,255,.62);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 12px 30px rgba(27,35,48,.06)}
+.card{background:oklch(.99 .008 92 / .5);border:1px solid var(--line);border-radius:8px;padding:20px 22px}
 .card h3{margin-bottom:8px}
 .card p{font-size:14px;line-height:1.55;color:var(--ink-2)}
 .card .ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;margin-bottom:12px;font-family:var(--serif);font-size:19px;color:#fff}
@@ -175,6 +175,20 @@ h3{font-size:24px}
 .stat small{display:block;font-family:var(--sans);font-size:12.5px;color:var(--ink-3);letter-spacing:.08em;margin-top:6px;text-transform:uppercase}
 .slide.dark .stat small{color:var(--night-soft)}
 
+/* ============ FIELD MANUAL ============ */
+.spec{width:100%;border-collapse:collapse;font-size:14px}
+.spec th{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:8px 12px;border-bottom:2px solid var(--ink);font-weight:500}
+.spec td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+.spec .t{font-family:var(--mono);font-size:12.5px;color:var(--vermillion-2);white-space:nowrap}
+.spec .u{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:right;white-space:nowrap}
+.cron{font-family:var(--mono);font-size:13.5px;line-height:1.6;padding:9px 2px;border-bottom:1px solid var(--line)}
+.slide.dark .cron{border-color:var(--line-l);color:var(--night-ink)}
+.cron .tm{color:var(--vermillion-2);display:inline-block;min-width:118px}
+.slide.dark .cron .tm{color:#e0724f}
+.filetree,.gitlog{font-family:var(--mono);font-size:13.5px;line-height:2.05;color:var(--ink-2)}
+.filetree .dim,.gitlog .dim{color:var(--ink-3)}
+.gitlog b{color:var(--vermillion-2);font-weight:500}
+
 /* ============ PRINT ============ */
 @media print{
   body{background:#fff;overflow:visible}
@@ -225,9 +239,9 @@ h3{font-size:24px}
       <h1 class="fade-up" style="--d:.25s;font-size:120px;letter-spacing:.02em">CV3</h1>
       <div class="seal fade-up" style="--d:.7s">記憶</div>
     </div>
-    <p class="lede fade-up" style="--d:.45s;font-size:26px;max-width:720px">A memory that compounds. The AI partner your team keeps.</p>
+    <p class="lede fade-up" style="--d:.45s;font-size:26px;max-width:720px">The AI partner that runs our stack. Not a demo: it is running right now.</p>
     <div class="row gap-sm mt-lg fade-up" style="--d:.65s">
-      <span class="chip">persona</span><span class="chip">memory</span><span class="chip">skills</span><span class="chip">continuous improvement</span>
+      <span class="chip">persona</span><span class="chip">memory</span><span class="chip">search</span><span class="chip">skills</span><span class="chip">reviews</span>
     </div>
   </div>
 </section>
@@ -472,204 +486,87 @@ h3{font-size:24px}
   </div>
 </section>
 
-<!-- ══════════ 13 · TRUST LAYERS ══════════ -->
-<section class="slide dark" id="s13">
-  <span class="kicker fade-up">12 · Enterprise edition</span>
-  <h2 class="fade-up" style="--d:.1s;margin-top:14px">Guardrails that cannot be overwritten.</h2>
-  <div class="col gap-sm mt-lg" style="max-width:900px">
-    <div class="layer pop" style="--d:.3s"><span class="tag">L3 · you</span><span class="nm">Personal</span><span class="ds">identity · soul · diaries · drafts. Local-first, free co-edit.</span></div>
-    <div class="layer pop" style="--d:.5s"><span class="tag">L2 · team</span><span class="nm">Team knowledge</span><span class="ds">library · decisions · skills. PR-gated: AI drafts, humans approve.</span></div>
-    <div class="layer locked pop" style="--d:.7s"><span class="tag">L1 · locked</span><span class="nm"><svg class="lock" viewBox="0 0 24 24" fill="none" stroke="#c8452c" stroke-width="2"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Guardrails</span><span class="ds">house rules · security · write-guards · caps. Change only by named-owner PR.</span></div>
-    <div class="layer pop" style="--d:.9s"><span class="tag">L0 · core</span><span class="nm">Engine</span><span class="ds">mechanics · protocols · scripts. Versioned, pull-only.</span></div>
-  </div>
-  <div class="row gap-md mt-lg">
-    <div class="rulechip step" data-step="1"><b>1</b> write-guard refuses protected paths (code, not prompts)</div>
-    <div class="rulechip step" data-step="1"><b>2</b> branch protection + required reviews</div>
-    <div class="rulechip step" data-step="1"><b>3</b> CODEOWNERS: named humans</div>
-    <div class="rulechip step" data-step="2" style="border-color:rgba(200,69,44,.6)"><b>4</b> personal → team only by promotion</div>
-  </div>
-  <div class="footnote abs" style="right:72px;bottom:44px">Politeness is not a security model. Walls are.</div>
+<!-- ══════════ 13 · TOOL SHELF ══════════ -->
+<section class="slide paper" id="s13">
+  <span class="kicker fade-up">12 · The tool shelf</span>
+  <h2 class="fade-up" style="--d:.1s;margin-top:14px">What's in the box.</h2>
+  <p class="lede fade-up" style="--d:.2s;margin-top:8px">Everything CV3 uses. All of it is actually running.</p>
+  <table class="spec fade-up" style="--d:.3s;margin-top:22px">
+    <thead><tr><th style="width:215px">Tool</th><th>What it does</th><th style="width:150px;text-align:right">In use</th></tr></thead>
+    <tbody>
+      <tr class="fade-up" style="--d:.35s"><td class="t">search-server</td><td>Web search and page fetch: live answers, no hand-waving</td><td class="u">asked daily</td></tr>
+      <tr class="fade-up" style="--d:.42s"><td class="t">recall + vectors</td><td>The brain's memory search: keyword and meaning, over everything written</td><td class="u">every session</td></tr>
+      <tr class="fade-up" style="--d:.49s"><td class="t">fts indexer</td><td>A keyword index over years of diaries, patterns and notes</td><td class="u">rebuilt nightly</td></tr>
+      <tr class="fade-up" style="--d:.56s"><td class="t">video &amp; voice reader</td><td>Send a link or a voice note, get a transcript filed into memory</td><td class="u">on demand</td></tr>
+      <tr class="fade-up" style="--d:.63s"><td class="t">browser capture</td><td>Screenshots and page recon for anything we build</td><td class="u">in QA loops</td></tr>
+      <tr class="fade-up" style="--d:.7s"><td class="t">skill library</td><td>46 skills: planning, UI, debugging, audits. Plain markdown</td><td class="u">loaded per task</td></tr>
+      <tr class="fade-up" style="--d:.77s"><td class="t">whatsapp bridges</td><td>Three phone lines that talk to the same brain</td><td class="u">live now</td></tr>
+      <tr class="fade-up" style="--d:.84s"><td class="t">notify + publish</td><td>Pings when something fails; one command ships this site</td><td class="u">cron + on demand</td></tr>
+    </tbody>
+  </table>
+  <div class="footnote abs" style="left:72px;bottom:44px">No black boxes. Every tool is a script you can read.</div>
 </section>
 
-<!-- ══════════ 14 · CONCURRENCY FLOW ══════════ -->
+<!-- ══════════ 14 · RUNS ITSELF ══════════ -->
 <section class="slide dark" id="s14">
-  <span class="kicker fade-up">13 · Many writers, one truth</span>
-  <h2 class="fade-up" style="--d:.1s;margin-top:10px">Markdown at team scale.</h2>
-  <svg class="fade-up" style="--d:.25s;margin-top:6px" width="1120" height="330" viewBox="0 0 1120 330" fill="none">
-    <defs>
-      <pattern id="seigaiha" width="56" height="28" patternUnits="userSpaceOnUse">
-        <g fill="none" stroke="#7b9ad0" stroke-width="1" opacity=".16">
-          <circle cx="28" cy="28" r="26"/><circle cx="28" cy="28" r="18"/><circle cx="28" cy="28" r="10"/>
-          <circle cx="0" cy="28" r="26"/><circle cx="0" cy="28" r="18"/><circle cx="0" cy="28" r="10"/>
-          <circle cx="56" cy="28" r="26"/><circle cx="56" cy="28" r="18"/><circle cx="56" cy="28" r="10"/>
-        </g>
-      </pattern>
-    </defs>
-    <rect width="1120" height="330" fill="url(#seigaiha)"/>
-    <defs>
-      <linearGradient id="lgwire" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3f5a8a"/><stop offset="1" stop-color="#7b9ad0"/></linearGradient>
-    </defs>
-    <g font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#93a1b5">
-      <rect x="8" y="30" width="150" height="64" rx="10" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.14)"/>
-      <text x="24" y="56" fill="#c8d2e0">dev · claude-code</text><text x="24" y="76" class="dim">▮ writing…</text>
-      <rect x="8" y="133" width="150" height="64" rx="10" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.14)"/>
-      <text x="24" y="159" fill="#c8d2e0">dev · claude-code</text><text x="24" y="179">▮ capture</text>
-      <rect x="8" y="236" width="150" height="64" rx="10" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.14)"/>
-      <text x="24" y="262" fill="#c8d2e0">dev · claude-code</text><text x="24" y="282">▮ proposal</text>
-      <rect x="250" y="44" width="104" height="38" rx="8" fill="rgba(201,154,63,.1)" stroke="rgba(201,154,63,.5)"/>
-      <text x="262" y="67" fill="#e6c47a">inbox/a.md</text>
-      <rect x="250" y="146" width="104" height="38" rx="8" fill="rgba(201,154,63,.1)" stroke="rgba(201,154,63,.5)"/>
-      <text x="262" y="169" fill="#e6c47a">inbox/b.md</text>
-      <rect x="250" y="248" width="104" height="38" rx="8" fill="rgba(201,154,63,.1)" stroke="rgba(201,154,63,.5)"/>
-      <text x="262" y="271" fill="#e6c47a">inbox/c.md</text>
-    </g>
-    <path id="f1" d="M158 62 C205 62 205 62 248 62" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
-    <path id="f2" d="M158 165 C205 165 205 165 248 165" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
-    <path id="f3" d="M158 268 C205 268 205 268 248 268" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
-    <path id="f4" d="M354 63 C420 63 430 150 468 158" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
-    <path id="f5" d="M354 165 C410 165 430 162 468 162" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
-    <path id="f6" d="M354 267 C420 267 430 175 468 168" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
-    <g>
-      <circle r="4" fill="#e6c47a"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.6s" begin="0s" repeatCount="indefinite"><mpath href="#f1"/></animateMotion></circle>
-      <circle r="4" fill="#7fd1b0"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.6s" begin="0.9s" repeatCount="indefinite"><mpath href="#f2"/></animateMotion></circle>
-      <circle r="4" fill="#e88b76"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.6s" begin="1.7s" repeatCount="indefinite"><mpath href="#f3"/></animateMotion></circle>
-      <circle r="4" fill="#e6c47a"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.4s" begin="0.5s" repeatCount="indefinite"><mpath href="#f4"/></animateMotion></circle>
-      <circle r="4" fill="#7fd1b0"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.4s" begin="1.4s" repeatCount="indefinite"><mpath href="#f5"/></animateMotion></circle>
-      <circle r="4" fill="#e88b76"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.4s" begin="2s" repeatCount="indefinite"><mpath href="#f6"/></animateMotion></circle>
-    </g>
-    <g font-family="ui-monospace,Consolas,monospace" font-size="10.5">
-      <polygon points="500,165 535,145 570,165 570,203 535,223 500,203" fill="rgba(46,125,107,.16)" stroke="#2e7d6b" stroke-width="1.5"/>
-      <text x="535" y="189" text-anchor="middle" fill="#7fd1b0" font-size="11">librarian</text>
-      <text x="535" y="203" text-anchor="middle" fill="#5f6f86" font-size="9">single writer</text>
-    </g>
-    <path id="f7" d="M572 184 L616 184" stroke="#7fd1b0" stroke-width="2" class="dashflow"/>
-    <circle r="4.5" fill="#7fd1b0"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="1.6s" begin="0s" repeatCount="indefinite"><mpath href="#f7"/></animateMotion></circle>
-    <rect x="620" y="150" width="16" height="70" rx="6" fill="#c8452c"/>
-    <text x="644" y="146" font-family="ui-monospace,monospace" font-size="10.5" fill="#e88b76">main · one commit line</text>
-    <text x="644" y="240" font-family="ui-monospace,monospace" font-size="10.5" fill="#5f6f86">conflict-free by construction</text>
-    <path id="f8" d="M638 184 C660 184 660 120 690 110" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
-    <path id="f9" d="M638 184 C660 184 660 250 690 260" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
-    <circle r="4" fill="#9fb4d8"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.4s" begin="0.3s" repeatCount="indefinite"><mpath href="#f8"/></animateMotion></circle>
-    <circle r="4" fill="#9fb4d8"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite"><mpath href="#f9"/></animateMotion></circle>
-    <g font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#93a1b5">
-      <rect x="694" y="74" width="200" height="72" rx="10" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.14)"/>
-      <text x="710" y="102" fill="#c8d2e0">CI · lint · reindex</text><text x="710" y="122">rebuild the indexes</text>
-      <rect x="694" y="224" width="200" height="72" rx="10" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.14)"/>
-      <text x="710" y="252" fill="#c8d2e0">portal · search</text><text x="710" y="272">read-only for the floor</text>
-      <rect x="950" y="150" width="162" height="70" rx="10" fill="rgba(200,69,44,.08)" stroke="rgba(200,69,44,.4)"/>
-      <text x="966" y="178" fill="#e88b76">everyone reads</text><text x="966" y="198" fill="#5f6f86">zero write contention</text>
-    </g>
-    <path id="f10" d="M894 110 C930 110 930 170 948 178" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
-    <path id="f11" d="M894 260 C930 260 930 195 948 190" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
-    <circle r="4" fill="#9fb4d8"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2s" begin="0.6s" repeatCount="indefinite"><mpath href="#f10"/></animateMotion></circle>
-    <circle r="4" fill="#9fb4d8"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2s" begin="1.4s" repeatCount="indefinite"><mpath href="#f11"/></animateMotion></circle>
-  </svg>
-  <div class="row gap-sm mt-sm fade-up" style="--d:.5s">
-    <div class="rulechip"><b>1</b> one file, one writer</div>
-    <div class="rulechip"><b>2</b> append-only fast writes</div>
-    <div class="rulechip"><b>3</b> PR-gated knowledge</div>
-    <div class="rulechip"><b>4</b> generated = never hand-edited</div>
-    <div class="rulechip"><b>5</b> personal never auto-merges</div>
-  </div>
-</section>
-
-<!-- ══════════ 15 · INIT INTERVIEW ══════════ -->
-<section class="slide dark" id="s15">
-  <span class="kicker fade-up">14 · Day one</span>
-  <h2 class="fade-up" style="--d:.1s;margin-top:14px">It starts with a name.</h2>
+  <span class="kicker fade-up">13 · It runs itself</span>
+  <h2 class="fade-up" style="--d:.1s;margin-top:14px">Nobody feeds it. It stays fresh.</h2>
   <div class="row gap-lg mt-lg" style="align-items:flex-start">
-    <div class="term fade-up" style="--d:.25s;width:640px">
-      <div class="bar"><i></i><i></i><i></i></div>
-      <div class="body">
-        <span class="dim" data-type data-delay="400" data-speed="12">$ cv3 init</span><br>
-        <span data-type data-delay="1100" data-speed="10">Who am I working with?</span><br>
-        <span class="g" data-type data-delay="2100" data-speed="14">&gt; Mira</span><br>
-        <span data-type data-delay="2700" data-speed="10">And what should you call me?</span><br>
-        <span class="y" data-type data-delay="4000" data-speed="10">&gt; Aki</span><br>
-        <span class="g" data-type data-delay="4800" data-speed="7">Hello, Aki. I'm yours. ✓ first commit</span>
-      </div>
+    <div class="col gap-md" style="width:330px">
+      <div class="stat pop" style="--d:.3s">24/7<small>on real clocks, not moods</small></div>
+      <div class="rulechip pop" style="--d:.5s">fails loudly: every job pings us when it breaks</div>
+      <div class="rulechip pop" style="--d:.7s">observation runs without AI: facts only</div>
+      <div class="footnote pop" style="--d:.9s">We fixed the paging path before trusting the silence.</div>
     </div>
-    <div class="col gap-sm" style="width:470px">
-      <div class="layer step" data-step="1"><span class="tag">✓ step 1</span><span class="nm">Introduction</span><span class="ds">who you are, how you work</span></div>
-      <div class="layer step" data-step="1"><span class="tag">✓ step 2</span><span class="nm">The naming</span><span class="ds">they name their AI (the identity anchor)</span></div>
-      <div class="layer step" data-step="2"><span class="tag">✓ step 3</span><span class="nm">Dials</span><span class="ds">tone · care boundary · language</span></div>
-      <div class="layer locked step" data-step="3"><span class="tag">🔒 step 4</span><span class="nm">Guardrails seeded</span><span class="ds">team set, locked, enforced</span></div>
+    <div class="col" style="width:660px">
+      <div class="cron pop" style="--d:.35s"><span class="tm">05:00 daily</span> auto-push: code to GitHub, reviewed by diff</div>
+      <div class="cron pop" style="--d:.45s"><span class="tm">06:15 daily</span> reindex: search and vectors rebuilt, fail-loud</div>
+      <div class="cron pop" style="--d:.55s"><span class="tm">02:00 daily</span> backup: offsite, verified by restore</div>
+      <div class="cron pop" style="--d:.65s"><span class="tm">every 5 min</span> watchdogs: bridge and tunnel self-heal</div>
+      <div class="cron pop" style="--d:.75s"><span class="tm">daily</span> observe pass: corrections and unknowns, counted</div>
+      <div class="cron pop" style="--d:.85s"><span class="tm">weekly</span> review implements: trust order, humans approve</div>
+      <div class="cron pop" style="--d:.95s"><span class="tm">fortnightly</span> curator: memory hygiene, caps kept honest</div>
     </div>
   </div>
-  <div class="footnote abs" style="left:72px;bottom:44px">Standardized onboarding. Every developer, day one, their own partner.</div>
+  <div class="footnote abs" style="left:72px;bottom:44px">The system in the morning briefing is the same one that ran overnight.</div>
 </section>
 
-<!-- ══════════ 16 · THEIR STACK ══════════ -->
-<section class="slide paper" id="s16">
-  <span class="kicker fade-up">15 · Fits your stack</span>
-  <h2 class="fade-up" style="--d:.1s;margin-top:14px">Local-first. Azure when you're ready.</h2>
-  <svg class="fade-up" style="--d:.25s;margin-top:10px" width="1136" height="330" viewBox="0 0 1136 330" fill="none">
-    <g font-family="ui-monospace,Consolas,monospace" font-size="11" fill="#6d7686">
-      <rect x="8" y="100" width="230" height="120" rx="12" fill="rgba(27,35,48,.05)" stroke="rgba(27,35,48,.2)"/>
-      <text x="28" y="134" font-size="13" fill="#1b2330" font-family="Georgia,serif">Your machine · day one</text>
-      <text x="28" y="158">claude code · local files</text><text x="28" y="176">full engine · works offline</text><text x="28" y="194">zero infrastructure</text>
-      <rect x="302" y="40" width="250" height="90" rx="12" fill="rgba(27,35,48,.05)" stroke="rgba(27,35,48,.2)"/>
-      <text x="322" y="72" font-size="13" fill="#1b2330" font-family="Georgia,serif">Azure DevOps</text>
-      <text x="322" y="94">team kb · markdown · PRs</text><text x="322" y="112">branch policies · owners</text>
-      <rect x="302" y="190" width="250" height="90" rx="12" fill="rgba(27,35,48,.05)" stroke="rgba(27,35,48,.2)"/>
-      <text x="322" y="222" font-size="13" fill="#1b2330" font-family="Georgia,serif">Azure Pipelines</text>
-      <text x="322" y="244">lint · reindex · digest</text><text x="322" y="262">scheduled jobs</text>
-      <rect x="616" y="100" width="250" height="120" rx="12" fill="rgba(200,69,44,.06)" stroke="rgba(200,69,44,.45)"/>
-      <text x="636" y="134" font-size="13" fill="#1b2330" font-family="Georgia,serif">Static Web App</text>
-      <text x="636" y="158">knowledge portal</text><text x="636" y="176">search · patterns · skills</text><text x="636" y="194">reads for the whole floor</text>
-      <rect x="930" y="100" width="198" height="120" rx="12" fill="rgba(27,35,48,.03)" stroke="rgba(27,35,48,.15)" stroke-dasharray="5 5"/>
-      <text x="950" y="134" font-size="13" fill="#3d4655" font-family="Georgia,serif">Optional, later</text>
-      <text x="950" y="158">recall daemon</text><text x="950" y="176">container apps</text><text x="950" y="194">their region</text>
-    </g>
-    <path id="a1" d="M240 160 C270 160 270 85 300 85" stroke="#c8452c" stroke-width="1.5" class="dashflow"/>
-    <path id="a2" d="M240 160 C270 160 270 235 300 235" stroke="#c8452c" stroke-width="1.5" class="dashflow"/>
-    <path id="a3" d="M552 85 C590 85 590 130 614 140" stroke="#c8452c" stroke-width="1.5" class="dashflow"/>
-    <path id="a4" d="M552 235 C590 235 590 190 614 165" stroke="#c8452c" stroke-width="1.5" class="dashflow"/>
-    <path id="a5" d="M866 160 C895 160 905 160 928 160" stroke="#8a94a6" stroke-width="1.5" stroke-dasharray="4 6"/>
-    <circle r="4" fill="#c8452c"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="3s" begin="0s" repeatCount="indefinite"><mpath href="#a1"/></animateMotion></circle>
-    <circle r="4" fill="#c8452c"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="3s" begin="1.5s" repeatCount="indefinite"><mpath href="#a2"/></animateMotion></circle>
-    <circle r="4" fill="#c8452c"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="3s" begin="0.7s" repeatCount="indefinite"><mpath href="#a3"/></animateMotion></circle>
-    <circle r="4" fill="#c8452c"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="3s" begin="2.2s" repeatCount="indefinite"><mpath href="#a4"/></animateMotion></circle>
-  </svg>
-  <div class="row gap-md mt-sm fade-up" style="--d:.5s">
-    <span class="chip">EN + 日本語 · mixed-language KB ready</span>
-    <span class="chip">their region · their data</span>
-    <span class="chip">git history = audit trail</span>
-  </div>
-</section>
-
-<!-- ══════════ 17 · ROADMAP ══════════ -->
-<section class="slide paper" id="s17">
-  <span class="kicker fade-up">16 · Start small, prove it</span>
-  <h2 class="fade-up" style="--d:.1s;margin-top:14px">One team. Two weeks. Real numbers.</h2>
+<!-- ══════════ 15 · ALL FILES ══════════ -->
+<section class="slide paper" id="s15">
+  <span class="kicker fade-up">14 · No black box</span>
+  <h2 class="fade-up" style="--d:.1s;margin-top:14px">It's all just files.</h2>
   <div class="row gap-lg mt-lg" style="align-items:flex-start">
-    <div style="width:640px">
-      <div class="rail" style="margin-top:16px"><div class="fill"></div></div>
-      <div class="row between mt-lg" style="margin-top:26px">
-        <div class="col pop" style="--d:.3s;width:150px"><b style="font-family:var(--serif);font-size:19px">P1 · Local</b><span class="footnote">skeleton + init; every dev works solo, offline</span></div>
-        <div class="col pop" style="--d:.5s;width:150px"><b style="font-family:var(--serif);font-size:19px">P2 · Central</b><span class="footnote">repo + CI + portal; the floor reads</span></div>
-        <div class="col pop" style="--d:.7s;width:150px"><b style="font-family:var(--serif);font-size:19px">P3 · Server</b><span class="footnote">recall daemon + presence</span></div>
-        <div class="col pop" style="--d:.9s;width:150px"><b style="font-family:var(--serif);font-size:19px">P4 · Govern</b><span class="footnote">owners, rituals, metrics</span></div>
-      </div>
+    <div class="codecard fade-up" style="--d:.25s;width:520px">
+      <div class="filetree">cognitio/<br>├─ main/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dim">identity, rules, hot list</span><br>├─ daily-diary/&nbsp;<span class="dim">every day, as it happens</span><br>├─ library/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dim">patterns and playbooks</span><br>├─ plugins/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dim">skills: SKILL.md, portable</span><br>└─ TOOLS/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dim">the shelf: search, memory, capture</span></div>
     </div>
-    <div class="card pop" style="--d:.6s;width:420px;border-color:var(--vermillion);box-shadow:0 18px 44px rgba(200,69,44,.14)">
-      <span class="kicker">The pilot</span>
-      <h3 style="margin-top:10px;font-size:22px">One team · two weeks</h3>
-      <div class="col gap-sm" style="margin-top:12px">
-        <span class="step" data-step="1" style="font-size:14px;color:var(--ink-2)">→ onboarding time per dev</span>
-        <span class="step" data-step="1" style="font-size:14px;color:var(--ink-2)">→ KB reuse: "already written down" hits</span>
-        <span class="step" data-step="2" style="font-size:14px;color:var(--ink-2)">→ recall quality on real questions</span>
-        <span class="step" data-step="2" style="font-size:14px;color:var(--ink-2)">→ do devs keep using it on day 14?</span>
-      </div>
+    <div class="codecard fade-up" style="--d:.45s;width:520px">
+      <div class="gitlog"><span class="dim">$ git log --oneline -3</span><br><b>7d3df15</b> every dot rides its line now<br><b>579f062</b> fonts and manifest in the right place<br><b>bdc5181</b> showcase v2: custom fonts, brain icon</div>
     </div>
   </div>
-  <div class="footnote abs" style="left:72px;bottom:44px">No big-bang rollout. The floor earns it, phase by phase.</div>
+  <div class="row gap-md mt-lg fade-up" style="--d:.65s">
+    <span class="chip">versioned: author, diff, date</span>
+    <span class="chip">portable: clone it, you have the memory</span>
+    <span class="chip">yours: no lock-in, no export button</span>
+  </div>
+  <div class="footnote abs" style="left:72px;bottom:44px">One small daemon serves the brain. Everything it knows is plain markdown.</div>
 </section>
 
-<!-- ══════════ 18 · CLOSE ══════════ -->
-<section class="slide dark" id="s18">
+<!-- ══════════ 16 · WHERE THIS GOES ══════════ -->
+<section class="slide dark" id="s16">
+  <span class="kicker fade-up">15 · Where this goes</span>
+  <h2 class="fade-up" style="--d:.1s;margin-top:14px">Built for one desk.<br>Ready for a floor.</h2>
+  <div class="col gap-md mt-lg" style="max-width:880px">
+    <div class="layer pop" style="--d:.3s"><span class="tag">01</span><span class="nm">Each dev, locally</span><span class="ds">their own partner, their own memory, zero infrastructure to start</span></div>
+    <div class="layer pop" style="--d:.5s"><span class="tag">02</span><span class="nm">One team brain</span><span class="ds">a shared markdown repo: knowledge spreads by review, never by overwrite</span></div>
+    <div class="layer pop" style="--d:.7s"><span class="tag">03</span><span class="nm">Locked guardrails, suggested skills</span><span class="ds">the culture stays yours; the engine keeps its promises mechanically</span></div>
+  </div>
+  <div class="footnote abs" style="left:72px;bottom:44px">The enterprise edition is the same engine, one team at a time.</div>
+</section>
+
+<!-- ══════════ 17 · CLOSE ══════════ -->
+<section class="slide dark" id="s17">
   <div style="height:100%;display:flex;flex-direction:column;justify-content:center;max-width:900px">
-    <span class="kicker fade-up">CV3 · Enterprise Edition</span>
+    <span class="kicker fade-up">CV3 · running today</span>
     <h1 class="fade-up" style="--d:.15s;font-size:88px;margin-top:18px">Keep what<br>you learn.</h1>
     <svg class="fade-up" style="--d:.4s" width="150" height="16" viewBox="0 0 150 16" fill="none" aria-hidden="true"><path d="M2 10 C34 4 58 14 86 8 C108 4 128 10 148 7" stroke="#c8452c" stroke-width="4" stroke-linecap="round"/></svg>
     <p class="lede fade-up" style="--d:.5s;font-size:23px">The knowledge was always there: in your people, your projects, your recordings. CV3 makes it stay.</p>
@@ -684,7 +581,7 @@ h3{font-size:24px}
 
 <div class="hud">
   <div class="hint"><kbd>←</kbd><kbd>→</kbd> navigate · <kbd>space</kbd> next · <kbd>F</kbd> fullscreen</div>
-  <div class="brand-corner">CV3 · enterprise edition</div>
+  <div class="brand-corner">CV3 · running today</div>
   <div class="counter" id="counter">01 / 18</div>
   <div class="nav"><button id="prevBtn" aria-label="Previous">‹</button><button id="nextBtn" aria-label="Next">›</button></div>
 </div>
