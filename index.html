@@ -214,7 +214,7 @@ h3{font-size:24px}
         <animate attributeName="stroke-opacity" values=".45;0" dur="3.4s" repeatCount="indefinite"/>
       </circle>
     </g>
-    <circle cx="928" cy="114" r="3.5" fill="#ffd9a0">
+    <circle r="3.5" fill="#ffd9a0"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/>
       <animateMotion dur="13s" repeatCount="indefinite"><mpath href="#ensoArc"/></animateMotion>
     </circle>
     <path id="ensoArc" d="M 928 114 A 257 257 0 1 0 1196 462" stroke="none"/>
@@ -359,7 +359,7 @@ h3{font-size:24px}
         <g class="pulse" style="--pd:1.6s"><circle cx="260" cy="330" r="34" fill="#c99a3f"/><text x="260" y="329" text-anchor="middle" fill="#fff" font-size="13">trust</text><text x="260" y="344" text-anchor="middle" fill="#fff" font-size="9" font-family="ui-monospace,monospace">ranked</text></g>
         <g class="pulse" style="--pd:2.4s"><circle cx="80" cy="200" r="34" fill="#26344a"/><text x="80" y="199" text-anchor="middle" fill="#fff" font-size="13">promote</text><text x="80" y="214" text-anchor="middle" fill="#fff" font-size="9" font-family="ui-monospace,monospace">human ✓</text></g>
       </g>
-      <circle cx="440" cy="200" r="6" fill="#c8452c">
+      <circle r="6" fill="#c8452c"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/>
         <animateMotion dur="9s" repeatCount="indefinite"><mpath href="#loopPath"/></animateMotion>
       </circle>
     </svg>
@@ -530,12 +530,12 @@ h3{font-size:24px}
     <path id="f5" d="M354 165 C410 165 430 162 468 162" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
     <path id="f6" d="M354 267 C420 267 430 175 468 168" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
     <g>
-      <circle cx="158" cy="62" r="4" fill="#e6c47a"><animateMotion dur="2.6s" begin="0s" repeatCount="indefinite"><mpath href="#f1"/></animateMotion></circle>
-      <circle cx="158" cy="165" r="4" fill="#7fd1b0"><animateMotion dur="2.6s" begin="0.9s" repeatCount="indefinite"><mpath href="#f2"/></animateMotion></circle>
-      <circle cx="158" cy="268" r="4" fill="#e88b76"><animateMotion dur="2.6s" begin="1.7s" repeatCount="indefinite"><mpath href="#f3"/></animateMotion></circle>
-      <circle cx="354" cy="63" r="4" fill="#e6c47a"><animateMotion dur="2.4s" begin="0.5s" repeatCount="indefinite"><mpath href="#f4"/></animateMotion></circle>
-      <circle cx="354" cy="165" r="4" fill="#7fd1b0"><animateMotion dur="2.4s" begin="1.4s" repeatCount="indefinite"><mpath href="#f5"/></animateMotion></circle>
-      <circle cx="354" cy="267" r="4" fill="#e88b76"><animateMotion dur="2.4s" begin="2s" repeatCount="indefinite"><mpath href="#f6"/></animateMotion></circle>
+      <circle r="4" fill="#e6c47a"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.6s" begin="0s" repeatCount="indefinite"><mpath href="#f1"/></animateMotion></circle>
+      <circle r="4" fill="#7fd1b0"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.6s" begin="0.9s" repeatCount="indefinite"><mpath href="#f2"/></animateMotion></circle>
+      <circle r="4" fill="#e88b76"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.6s" begin="1.7s" repeatCount="indefinite"><mpath href="#f3"/></animateMotion></circle>
+      <circle r="4" fill="#e6c47a"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.4s" begin="0.5s" repeatCount="indefinite"><mpath href="#f4"/></animateMotion></circle>
+      <circle r="4" fill="#7fd1b0"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.4s" begin="1.4s" repeatCount="indefinite"><mpath href="#f5"/></animateMotion></circle>
+      <circle r="4" fill="#e88b76"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.4s" begin="2s" repeatCount="indefinite"><mpath href="#f6"/></animateMotion></circle>
     </g>
     <g font-family="ui-monospace,Consolas,monospace" font-size="10.5">
       <polygon points="500,165 535,145 570,165 570,203 535,223 500,203" fill="rgba(46,125,107,.16)" stroke="#2e7d6b" stroke-width="1.5"/>
@@ -543,14 +543,14 @@ h3{font-size:24px}
       <text x="535" y="203" text-anchor="middle" fill="#5f6f86" font-size="9">single writer</text>
     </g>
     <path id="f7" d="M572 184 L616 184" stroke="#7fd1b0" stroke-width="2" class="dashflow"/>
-    <circle cx="572" cy="184" r="4.5" fill="#7fd1b0"><animateMotion dur="1.6s" begin="0s" repeatCount="indefinite"><mpath href="#f7"/></animateMotion></circle>
+    <circle r="4.5" fill="#7fd1b0"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="1.6s" begin="0s" repeatCount="indefinite"><mpath href="#f7"/></animateMotion></circle>
     <rect x="620" y="150" width="16" height="70" rx="6" fill="#c8452c"/>
     <text x="644" y="146" font-family="ui-monospace,monospace" font-size="10.5" fill="#e88b76">main · one commit line</text>
     <text x="644" y="240" font-family="ui-monospace,monospace" font-size="10.5" fill="#5f6f86">conflict-free by construction</text>
     <path id="f8" d="M638 184 C660 184 660 120 690 110" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
     <path id="f9" d="M638 184 C660 184 660 250 690 260" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
-    <circle cx="638" cy="184" r="4" fill="#9fb4d8"><animateMotion dur="2.4s" begin="0.3s" repeatCount="indefinite"><mpath href="#f8"/></animateMotion></circle>
-    <circle cx="638" cy="184" r="4" fill="#9fb4d8"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite"><mpath href="#f9"/></animateMotion></circle>
+    <circle r="4" fill="#9fb4d8"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.4s" begin="0.3s" repeatCount="indefinite"><mpath href="#f8"/></animateMotion></circle>
+    <circle r="4" fill="#9fb4d8"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite"><mpath href="#f9"/></animateMotion></circle>
     <g font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#93a1b5">
       <rect x="694" y="74" width="200" height="72" rx="10" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.14)"/>
       <text x="710" y="102" fill="#c8d2e0">CI · lint · reindex</text><text x="710" y="122">rebuild the indexes</text>
@@ -561,8 +561,8 @@ h3{font-size:24px}
     </g>
     <path id="f10" d="M894 110 C930 110 930 170 948 178" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
     <path id="f11" d="M894 260 C930 260 930 195 948 190" stroke="url(#lgwire)" stroke-width="1.5" class="dashflow"/>
-    <circle cx="894" cy="110" r="4" fill="#9fb4d8"><animateMotion dur="2s" begin="0.6s" repeatCount="indefinite"><mpath href="#f10"/></animateMotion></circle>
-    <circle cx="894" cy="260" r="4" fill="#9fb4d8"><animateMotion dur="2s" begin="1.4s" repeatCount="indefinite"><mpath href="#f11"/></animateMotion></circle>
+    <circle r="4" fill="#9fb4d8"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2s" begin="0.6s" repeatCount="indefinite"><mpath href="#f10"/></animateMotion></circle>
+    <circle r="4" fill="#9fb4d8"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="2s" begin="1.4s" repeatCount="indefinite"><mpath href="#f11"/></animateMotion></circle>
   </svg>
   <div class="row gap-sm mt-sm fade-up" style="--d:.5s">
     <div class="rulechip"><b>1</b> one file, one writer</div>
@@ -626,10 +626,10 @@ h3{font-size:24px}
     <path id="a3" d="M552 85 C590 85 590 130 614 140" stroke="#c8452c" stroke-width="1.5" class="dashflow"/>
     <path id="a4" d="M552 235 C590 235 590 190 614 165" stroke="#c8452c" stroke-width="1.5" class="dashflow"/>
     <path id="a5" d="M866 160 C895 160 905 160 928 160" stroke="#8a94a6" stroke-width="1.5" stroke-dasharray="4 6"/>
-    <circle cx="240" cy="160" r="4" fill="#c8452c"><animateMotion dur="3s" begin="0s" repeatCount="indefinite"><mpath href="#a1"/></animateMotion></circle>
-    <circle cx="240" cy="160" r="4" fill="#c8452c"><animateMotion dur="3s" begin="1.5s" repeatCount="indefinite"><mpath href="#a2"/></animateMotion></circle>
-    <circle cx="552" cy="85" r="4" fill="#c8452c"><animateMotion dur="3s" begin="0.7s" repeatCount="indefinite"><mpath href="#a3"/></animateMotion></circle>
-    <circle cx="552" cy="235" r="4" fill="#c8452c"><animateMotion dur="3s" begin="2.2s" repeatCount="indefinite"><mpath href="#a4"/></animateMotion></circle>
+    <circle r="4" fill="#c8452c"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="3s" begin="0s" repeatCount="indefinite"><mpath href="#a1"/></animateMotion></circle>
+    <circle r="4" fill="#c8452c"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="3s" begin="1.5s" repeatCount="indefinite"><mpath href="#a2"/></animateMotion></circle>
+    <circle r="4" fill="#c8452c"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="3s" begin="0.7s" repeatCount="indefinite"><mpath href="#a3"/></animateMotion></circle>
+    <circle r="4" fill="#c8452c"><animate attributeName="opacity" values="0;1" dur="0.01s" begin="0s" fill="freeze"/><animateMotion dur="3s" begin="2.2s" repeatCount="indefinite"><mpath href="#a4"/></animateMotion></circle>
   </svg>
   <div class="row gap-md mt-sm fade-up" style="--d:.5s">
     <span class="chip">EN + 日本語 · mixed-language KB ready</span>
