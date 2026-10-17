@@ -1,11 +1,11 @@
 {
-  "name": "CV3 running today",
-  "short_name": "CV3",
-  "description": "A memory that compounds. The AI partner your team keeps.",
+  "name": "CV4 · a memory engine",
+  "short_name": "CV4",
+  "description": "Presentation deck: CV4, a memory engine for any AI agent. Plain markdown that remembers.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#0c121c",
-  "theme_color": "#c8452c",
+  "background_color": "#f5f2ec",
+  "theme_color": "#c8492e",
   "icons": [
     { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }

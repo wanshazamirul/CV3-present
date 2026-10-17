@@ -1,13 +1,15 @@
-# CV3 · running today · showcase deck
+# CV4 · the presentation
 
-Single-file animated presentation. 18 slides, works offline.
+Single-file animated deck about **CV4, a memory engine for any AI agent**. 14 slides, works offline, prints to a PDF leave-behind.
 
 **Present it**
 
-- Open `index.html` in any browser (double-click works).
-- `←` `→` / `space` to navigate. Slides 13, 15, 17 have progressive reveals: press again to build each layer.
-- `F` fullscreen · touch swipe works on phones and tablets.
-- `Ctrl+P` → Save as PDF for the static leave-behind version.
+* Open `index.html` in any browser (double-click works).
+* `→` `space` click: next. Builds reveal one press at a time.
+* `←` back · `R` replay the slide · `F` fullscreen · `?` keys card.
+* Touch: swipe left / right, or the on-screen arrows.
+* `Ctrl+P` prints one slide per page (all layers shown, no motion).
+* Calm build (entrances only, instant typing): add `?still=1` to the url.
 
 **Hosted copy**: https://wanshazamirul.github.io/CV3-present/
 
@@ -17,6 +19,6 @@ Single-file animated presentation. 18 slides, works offline.
 2. `bash ~/cognitio/tools/publish-cv3-present.sh "deck update: what changed"` (runs the design preflight, commits, pushes).
 3. GitHub Pages redeploys in about a minute.
 
-**Brief**: `showcase-deck-brief.md` (why this deck exists, story arc, art direction).
+**Brief**: `deck-brief.md` (why this deck exists, story arc, art direction, gates).
 
-Built by Wan + Shu. Sanitized: no real names, numbers, or private data.
+Built by Wan + Shu. Sanitized: only public CV4 facts, mock names.
