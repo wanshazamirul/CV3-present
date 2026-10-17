@@ -13,8 +13,10 @@ Single-file animated presentation. 18 slides, works offline.
 
 **Update flow**
 
-1. Edit on the server: `~/cognitio/presentations/cv3-showcase/`
-2. `bash TOOLS/publish-cv3-present.sh "deck update: what changed"`
+1. Edit here: this repo is the source of truth (`~/DEVELOPMENT/CV3-present/`).
+2. `bash ~/cognitio/tools/publish-cv3-present.sh "deck update: what changed"` (runs the design preflight, commits, pushes).
 3. GitHub Pages redeploys in about a minute.
+
+**Brief**: `showcase-deck-brief.md` (why this deck exists, story arc, art direction).
 
 Built by Wan + Shu. Sanitized: no real names, numbers, or private data.
