@@ -26,7 +26,7 @@ Wan's brief: minimalist, fades, typing, a lot of motion. One direction, no menus
   * typing = mono terminals with block cursor, one typo-and-fix moment for realism
   * diagrams draw themselves (`stroke-dashoffset`), staggered at ~75% of the previous segment
   * traveling dots ride the real paths (`offset-path`, same coordinates as the SVG)
-  * ambient: bounded glow bloom, slow orbiting mark, caret blink
+  * ambient: bounded glow bloom, caret blink; title carries the brain mark with one slow vermilion pulse ring
   * prefers-reduced-motion and `?still=1`: everything lands instantly, no waits
 
 ## Story arc (14 slides)

@@ -256,6 +256,13 @@ body.dark .hint{color:var(--dink2)}
 }
 @keyframes orbit{from{offset-distance:0%}to{offset-distance:100%}}
 
+.pulse{
+  position:absolute;border-radius:50%;pointer-events:none;opacity:0;
+  border:1.5px solid var(--accent);
+  animation:pulse 3.4s ease-out infinite;animation-delay:1.2s;
+}
+@keyframes pulse{0%{opacity:0;transform:scale(.74)}16%{opacity:.8}100%{opacity:0;transform:scale(1.14)}}
+
 .floatit{animation:floaty 7s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 
@@ -272,7 +279,7 @@ body.dark .hint{color:var(--dink2)}
   }
   .slide *{transition:none !important;animation:none !important}
   .anim{opacity:1 !important;transform:none !important}
-  .dot,.orbit{display:none !important}
+  .dot,.orbit,.pulse{display:none !important}
   .cur{display:none !important}
   body,body.dark{background:#fff}
   .slide,.slide.dark{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -280,11 +287,11 @@ body.dark .hint{color:var(--dink2)}
 
 /* ---------- motion off ---------- */
 @media (prefers-reduced-motion: reduce){
-  .dot,.orbit{display:none !important}
+  .dot,.orbit,.pulse{display:none !important}
   .bloom,.floatit{animation:none !important}
   .anim{transition-duration:.3s,.3s}
 }
-body.still .dot,body.still .orbit{display:none !important}
+body.still .dot,body.still .orbit,body.still .pulse{display:none !important}
 body.still .bloom,body.still .floatit{animation:none !important}
 body.still .anim{transition-duration:.3s,.3s}
 </style>
@@ -313,14 +320,8 @@ body.still .anim{transition-duration:.3s,.3s}
     </p>
   </div>
   <div class="bloom" style="width:560px;height:560px;right:150px;top:170px;animation-delay:.4s"></div>
-  <svg style="position:absolute;right:190px;top:250px;width:320px;height:320px" viewBox="0 0 320 320" aria-hidden="true">
-    <circle data-draw data-draw-dur="1500" cx="160" cy="160" r="118" stroke-width="1.4" style="transition-delay:.35s"/>
-    <circle data-draw data-draw-dur="1500" cx="160" cy="160" r="66" stroke-width="1" style="transition-delay:.65s;stroke:var(--ink3)"/>
-  </svg>
-  <div class="orbit anim fade" style="left:0;top:0;--d:.7s;animation-delay:.7s" aria-hidden="true"></div>
-  <svg style="position:absolute;right:343px;top:397px;width:14px;height:14px" viewBox="0 0 14 14" aria-hidden="true">
-    <circle cx="7" cy="7" r="3.4" fill="var(--ink)"/>
-  </svg>
+  <div class="pulse" style="right:190px;top:250px;width:320px;height:320px" aria-hidden="true"></div>
+  <img class="anim" style="--d:.35s;position:absolute;right:190px;top:250px;width:320px;height:320px" src="assets/icon-512.png" alt="" aria-hidden="true">
 </section>
 
 <!-- 02 · the problem -->
