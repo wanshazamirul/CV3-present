@@ -143,6 +143,10 @@ h2.mid{
 .term .scr{padding:26px 30px 30px}
 .term .ln{white-space:pre-wrap;color:var(--dink)}
 .term .ln .p{color:var(--accent)}
+.term .ghost{color:var(--dink2);opacity:0;transition:opacity .5s ease}
+.term .ghost.on{opacity:.5}
+.term .ln.cmd{visibility:hidden}
+.term .ln.cmd.on{visibility:visible}
 
 /* ---------- chrome ---------- */
 #bar{
@@ -531,23 +535,32 @@ body.still .anim{transition-duration:.3s,.3s}
   </div>
   <div class="term anim" style="position:absolute;left:130px;top:330px;width:700px">
     <div class="bar"><i></i><i></i><i></i></div>
-    <div class="scr" style="font-size:25px;line-height:1.9">
-      <div class="ln"><span class="p">$ </span><span data-typed data-speed="30" data-delay="700" data-ops='[["t","/speckit.constitution"],["p",700],["t","\n/speckit.specify"],["p",700],["t","\n/speckit.plan"],["p",650],["t","\n/speckit.implement"],["p",800],["t","\n/speckit.converge"]]'></span><span class="cur"></span></div>
+    <div class="scr" style="font-size:22px;line-height:1.6">
+      <div class="ln cmd" id="s10row1"><span class="p">$ </span><span id="s10t1" data-cmd="/speckit.constitution" data-speed="30"></span><span class="cur" id="s10c1" style="display:none"></span></div>
+      <div class="ln ghost" id="s10g1">...</div>
+      <div class="ln cmd" id="s10row2"><span class="p">$ </span><span id="s10t2" data-cmd="/speckit.specify" data-speed="30"></span><span class="cur" id="s10c2" style="display:none"></span></div>
+      <div class="ln ghost" id="s10g2">...</div>
+      <div class="ln cmd" id="s10row3"><span class="p">$ </span><span id="s10t3" data-cmd="/speckit.plan" data-speed="30"></span><span class="cur" id="s10c3" style="display:none"></span></div>
+      <div class="ln ghost" id="s10g3">...</div>
+      <div class="ln cmd" id="s10row4"><span class="p">$ </span><span id="s10t4" data-cmd="/speckit.implement" data-speed="30"></span><span class="cur" id="s10c4" style="display:none"></span></div>
+      <div class="ln ghost" id="s10g4">...</div>
+      <div class="ln cmd" id="s10row5"><span class="p">$ </span><span id="s10t5" data-cmd="/speckit.converge" data-speed="30"></span><span class="cur" id="s10c5" style="display:none"></span></div>
+      <div class="ln ghost" id="s10g5">...</div>
     </div>
   </div>
   <div style="position:absolute;left:900px;top:352px;display:flex;flex-direction:column;gap:29px">
-    <div class="anim" data-step="1" style="--d:.06s"><span class="mono cb" style="font-size:22px;font-weight:500">constitution</span><span class="small" style="font-size:19px"> · the rules the project lives by</span></div>
-    <div class="anim" data-step="1" style="--d:.14s"><span class="mono cg" style="font-size:22px;font-weight:500">specify</span><span class="small" style="font-size:19px"> · the feature, frozen before code</span></div>
-    <div class="anim" data-step="1" style="--d:.22s"><span class="mono ca" style="font-size:22px;font-weight:500">plan</span><span class="small" style="font-size:19px"> · files, phases, gates</span></div>
-    <div class="anim" data-step="1" style="--d:.3s"><span class="mono cp" style="font-size:22px;font-weight:500">implement</span><span class="small" style="font-size:19px"> · the agent builds against the plan</span></div>
-    <div class="anim" data-step="1" style="--d:.38s"><span class="mono cacc" style="font-size:22px;font-weight:500">converge</span><span class="small" style="font-size:19px"> · lessons distilled, sent home</span></div>
+    <div id="s10r1" class="anim"><span class="mono cb" style="font-size:22px;font-weight:500">constitution</span><span class="small" style="font-size:19px"> · the rules the project lives by</span></div>
+    <div id="s10r2" class="anim"><span class="mono cg" style="font-size:22px;font-weight:500">specify</span><span class="small" style="font-size:19px"> · the feature, frozen before code</span></div>
+    <div id="s10r3" class="anim"><span class="mono ca" style="font-size:22px;font-weight:500">plan</span><span class="small" style="font-size:19px"> · files, phases, gates</span></div>
+    <div id="s10r4" class="anim"><span class="mono cp" style="font-size:22px;font-weight:500">implement</span><span class="small" style="font-size:19px"> · the agent builds against the plan</span></div>
+    <div id="s10r5" class="anim"><span class="mono cacc" style="font-size:22px;font-weight:500">converge</span><span class="small" style="font-size:19px"> · lessons distilled, sent home</span></div>
   </div>
   <svg class="lines" viewBox="0 0 1600 900" aria-hidden="true">
-    <path data-draw data-step="2" data-draw-dur="1200" class="acc" style="stroke-dasharray:4 9" d="M 400 656 C 400 780, 320 772, 244 788"/>
+    <path id="s10path" data-draw data-draw-dur="1200" style="stroke:var(--accent);stroke-dasharray:4 9" d="M 420 736 C 420 775, 330 778, 250 786"/>
   </svg>
-  <div class="dot" data-step="2" style="offset-path:path('M 400 656 C 400 780, 320 772, 244 788');animation-delay:.4s"></div>
-  <div class="chip anim fade" data-step="2" style="position:absolute;left:130px;top:762px;--d:.6s">memory/decisions.md</div>
-  <div class="lead anim" data-step="3" style="position:absolute;left:520px;bottom:104px;font-size:26px">Every converge lands a lesson in the memory. Nothing learned evaporates.</div>
+  <div id="s10dot" class="dot" style="offset-path:path('M 420 736 C 420 775, 330 778, 250 786');animation-delay:.4s"></div>
+  <div id="s10chip" class="chip anim fade" style="position:absolute;left:130px;top:762px">memory/decisions.md</div>
+  <div id="s10lead" class="lead anim" style="position:absolute;left:520px;bottom:104px;font-size:26px">Every converge lands a lesson in the memory. Nothing learned evaporates.</div>
 </section>
 
 <!-- 11 · proof -->
@@ -806,6 +819,7 @@ body.still .anim{transition-duration:.3s,.3s}
   function resetSlide(st){
     clearTimers(st);
     st._tok = (st._tok || 0) + 1;
+    if (st.el.id === "s10"){ s10reset(st); }
     st.el.querySelectorAll("[data-step],[data-draw],[data-typed],.anim").forEach(deactivate);
     st.el.querySelectorAll(".haloGlow").forEach(function(el){ el.classList.remove("haloGlow"); });
     st.el.querySelectorAll(".hero").forEach(function(h){ h.style.opacity = "0"; h.style.offsetDistance = "0%"; });
@@ -833,6 +847,7 @@ body.still .anim{transition-duration:.3s,.3s}
   function playSlide(st){
     clearTimers(st);
     if (st.el.id === "s5"){ s5play(st); return; }
+    if (st.el.id === "s10"){ s10play(st); return; }
     baseSlide(st);
     if (st.max === 0){ st.done = true; return; }
     if (reduced){
@@ -857,6 +872,7 @@ body.still .anim{transition-duration:.3s,.3s}
   }
   function completeSlide(st){
     if (st.el.id === "s5"){ s5finish(st); return; }
+    if (st.el.id === "s10"){ s10finish(st); return; }
     clearTimers(st);
     for (var s = st.step + 1; s <= st.max; s++){ st.step = s; stepIn(st); }
     st.done = true;
@@ -1009,6 +1025,79 @@ body.still .anim{transition-duration:.3s,.3s}
     });
   }
 
+  /* ---------- slide 10: type a line, ghost answers, matching item
+     lights up. Five lockstep beats, then converge, chip, closer. */
+  function s10reset(st){
+    for (var n = 1; n <= 5; n++){
+      var sp = s5id("s10t" + n);
+      sp._tok = (sp._tok || 0) + 1;
+      sp.textContent = "";
+      s5id("s10c" + n).style.display = "none";
+      s5id("s10g" + n).classList.remove("on");
+      s5id("s10row" + n).classList.remove("on");
+    }
+  }
+  function s10typeCmd(n){
+    var sp = s5id("s10t" + n);
+    var cmd = sp.getAttribute("data-cmd");
+    sp._ops = [["t", cmd]];
+    sp._final = cmd;
+    s5id("s10row" + n).classList.add("on");
+    s5id("s10c" + n).style.display = "";
+    typeIn(sp);
+    return cmd;
+  }
+  function s10sealCmd(n){
+    var sp = s5id("s10t" + n);
+    var cmd = sp.getAttribute("data-cmd");
+    sp._tok = (sp._tok || 0) + 1;
+    sp.textContent = cmd;
+    s5id("s10c" + n).style.display = "none";
+    s5id("s10g" + n).classList.add("on");
+    s5id("s10r" + n).classList.add("on");
+  }
+  function s10play(st){
+    st.done = false;
+    var tok = (st._tok = (st._tok || 0) + 1);
+    s10reset(st);
+    st.el.querySelectorAll(".anim").forEach(function(b){ if (!b.id) b.classList.add("on"); });
+    if (reduced){ s10finish(st); return; }
+    function T(ms, fn){
+      st.timers.push(setTimeout(function(){
+        if (st._tok === tok && st.el.classList.contains("active")) fn();
+      }, ms));
+    }
+    var t = 600, GAP = 320;
+    for (var n = 1; n <= 5; n++){
+      (function(k){
+        var cmd = s5id("s10t" + k).getAttribute("data-cmd");
+        var dur = cmd.length * 30 + 600;
+        T(t, function(){ s10typeCmd(k); });
+        T(t + dur, function(){ s10sealCmd(k); });
+      })(n);
+      var thisDur = s5id("s10t" + n).getAttribute("data-cmd").length * 30 + 600;
+      t += thisDur + GAP;
+    }
+    T(t, function(){ playDraw(s5id("s10path")); activate(s5id("s10dot")); }); t += 1200 + 250;
+    T(t, function(){ s5id("s10chip").classList.add("on"); }); t += 450;
+    T(t, function(){ s5id("s10lead").classList.add("on"); st.done = true; });
+  }
+  function s10finish(st){
+    st._tok = (st._tok || 0) + 1;
+    clearTimers(st);
+    st.el.querySelectorAll(".anim").forEach(function(b){ if (!b.id) b.classList.add("on"); });
+    for (var n = 1; n <= 5; n++){ s5id("s10row" + n).classList.add("on"); s10sealCmd(n); }
+    var path = s5id("s10path");
+    path.style.transition = "none";
+    path.style.strokeDashoffset = "0";
+    void path.getBoundingClientRect();
+    path.style.transition = "";
+    activate(s5id("s10dot"));
+    ["s10chip","s10lead"].forEach(function(id){ s5id(id).classList.add("on"); });
+    st.step = st.max;
+    st.done = true;
+  }
+
   /* ---------- chrome ---------- */
   function chrome(){
     var st = state[cur];
@@ -1092,8 +1181,10 @@ body.still .anim{transition-duration:.3s,.3s}
   window.addEventListener("beforeprint", function(){
     slides.forEach(function(s){
       s.querySelectorAll("[data-typed]").forEach(function(el){ el.textContent = el._final || ""; });
+      s.querySelectorAll("[data-cmd]").forEach(function(el){ el.textContent = el.getAttribute("data-cmd"); });
       s.querySelectorAll("[data-draw]").forEach(function(el){ el.style.transition = "none"; el.style.strokeDashoffset = "0"; });
       s.querySelectorAll(".anim,[data-step]").forEach(function(el){ el.classList.add("on"); });
+      s.querySelectorAll(".ghost,.cmd").forEach(function(el){ el.classList.add("on"); });
     });
   });
   window.addEventListener("afterprint", function(){
