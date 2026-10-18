@@ -9,24 +9,25 @@ Show **what CV4 is, how it runs daily, and how to start** to anyone new to it: a
 ## Format
 
 - Single-file `index.html`, offline, double-click to open. Assets are local (fonts, icons).
-- Present with `→` / `Space` / click to step (builds reveal layer by layer), `←` back, `R` replay slide, `F` fullscreen.
+- Present with `→` / `Space` / click: each slide auto-plays its beats, then `→` moves on (press once to complete a playing slide, again to advance). `←` back, `R` replay slide, `F` fullscreen.
 - Touch: swipe, on-screen arrows. `Ctrl+P` prints one slide per page (static, all layers shown).
 - Hosted copy: https://wanshazamirul.github.io/CV3-present/
 
-## Art direction (locked: "Paper & Signal")
+## Art direction (locked: "Paper & Signal", plus a working palette)
 
 Wan's brief: minimalist, fades, typing, a lot of motion. One direction, no menus:
 
 - **Paper**: warm white ground, ink text, hairline rules. Dark chapters (terminal, spec-kit) for contrast.
-- **One accent**: vermilion. Used only for "live" signals: cursors, traveling dots, key marks. Nothing else is colored.
-- **Type**: Fraunces (display), IBM Plex Sans (body), IBM Plex Mono (labels, terminals, folders). All self-hosted woff2.
+- **Signal set**: vermilion stays the "live" signal (cursors, traveling dots, key marks). Four working colors carry meaning everywhere else: blue = recall and reading, green = record and saving, amber = proof and versions, plum = the spec-kit work layer. The problem statement stays stark on purpose: color arrives with the solution.
+- **Type**: Fraunces (display, 610 to 680), IBM Plex Sans (body, 500 for leads), IBM Plex Mono (labels, 500). All self-hosted woff2. Muted text sits at ink2, never lighter, small mono never under 18px.
 - **Motion language** (the point of this deck):
-  * every element enters on a rise/fade, group staggers capped at ~0.5s
+  * each slide auto-plays its beats in order, about 780ms apart, then rests complete
+  * first press of next while playing completes the slide, the next press moves on
   * typing = mono terminals with block cursor, one typo-and-fix moment for realism
   * diagrams draw themselves (`stroke-dashoffset`), staggered at ~75% of the previous segment
   * traveling dots ride the real paths (`offset-path`, same coordinates as the SVG)
   * ambient: bounded glow bloom, slow orbiting mark, caret blink
-  * prefers-reduced-motion and `?still=1`: all motion degrades to calm fades
+  * prefers-reduced-motion and `?still=1`: everything lands instantly, no waits
 
 ## Story arc (14 slides)
 

@@ -5,7 +5,7 @@ Single-file animated deck about **CV4, a memory engine for any AI agent**. 14 sl
 **Present it**
 
 * Open `index.html` in any browser (double-click works).
-* `→` `space` click: next. Builds reveal one press at a time.
+* Each slide auto-plays its beats, then rests. `→` `space` click: complete, then next slide.
 * `←` back · `R` replay the slide · `F` fullscreen · `?` keys card.
 * Touch: swipe left / right, or the on-screen arrows.
 * `Ctrl+P` prints one slide per page (all layers shown, no motion).
