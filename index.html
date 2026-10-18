@@ -400,8 +400,6 @@ body.still .anim{transition-duration:.3s,.3s}
   </svg>
   <div id="s5heroR" class="dot hero g" style="offset-path:path('M 724 414 L 724 636');opacity:0"></div>
   <div id="s5heroB" class="dot hero b" style="offset-path:path('M 876 636 L 876 414');opacity:0"></div>
-  <div id="s5ambR" class="dot g" style="offset-path:path('M 724 414 L 724 636')"></div>
-  <div id="s5ambB" class="dot b" style="offset-path:path('M 876 636 L 876 414');animation-delay:.6s"></div>
   <div class="box anim fade" style="left:520px;top:296px;width:560px;height:108px;--d:.3s">
     <span class="t">AGENT</span>
     <span class="s">Claude Code · opencode · Gemini · any</span>
@@ -880,8 +878,8 @@ body.still .anim{transition-duration:.3s,.3s}
   function s5play(st){
     st.done = false;
     var tok = (st._tok = (st._tok || 0) + 1);
-    st.el.querySelectorAll(".box").forEach(function(b){ b.classList.add("on"); });
-    if (reduced){ s5finish(st); return; }
+    st.el.querySelectorAll(".anim").forEach(function(b){ if (!b.id) b.classList.add("on"); });
+    if (reduced){ s5finish(st); return; };
     function T(ms, fn){
       st.timers.push(setTimeout(function(){
         if (st._tok === tok && st.el.classList.contains("active")) fn();
@@ -911,15 +909,13 @@ body.still .anim{transition-duration:.3s,.3s}
     }); t += MERGE + TRAVEL + SPREAD + GAP;
     T(t, function(){
       s5id("s5lead").classList.add("on");
-      activate(s5id("s5ambR"));
-      activate(s5id("s5ambB"));
       st.done = true;
     });
   }
   function s5finish(st){
     st._tok = (st._tok || 0) + 1;
     clearTimers(st);
-    st.el.querySelectorAll(".box").forEach(function(b){ b.classList.add("on"); });
+    st.el.querySelectorAll(".anim").forEach(function(b){ if (!b.id) b.classList.add("on"); });
     ["s5lineR","s5haloAG","s5haloRG","s5lineB","s5haloRB","s5haloAB"].forEach(function(id){
       var el = s5id(id);
       el.style.transition = "none";
@@ -934,8 +930,6 @@ body.still .anim{transition-duration:.3s,.3s}
       h.style.opacity = "0";
       h.style.offsetDistance = "0%";
     });
-    activate(s5id("s5ambR"));
-    activate(s5id("s5ambB"));
     st.step = st.max;
     st.done = true;
   }
