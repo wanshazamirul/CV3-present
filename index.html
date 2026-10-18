@@ -266,6 +266,12 @@ body.dark .hint{color:var(--dink2)}
 .haloGlow{animation:haloBreathe 1.7s ease-in-out}
 @keyframes haloBreathe{0%,100%{opacity:1}50%{opacity:.45}}
 
+.grow{
+  opacity:0;transform:scaleY(0);transform-origin:bottom;
+  transition:opacity .45s ease var(--d,0s), transform .7s var(--e1) var(--d,0s);
+}
+.grow.on{opacity:1;transform:scaleY(1)}
+
 .floatit{animation:floaty 7s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 
@@ -282,6 +288,7 @@ body.dark .hint{color:var(--dink2)}
   }
   .slide *{transition:none !important;animation:none !important}
   .anim{opacity:1 !important;transform:none !important}
+  .grow{opacity:1 !important;transform:none !important}
   .dot,.orbit,.pulse{display:none !important}
   .cur{display:none !important}
   body,body.dark{background:#fff}
@@ -505,19 +512,19 @@ body.still .anim{transition-duration:.3s,.3s}
     <div class="kicker anim fade" style="--d:.05s">the ladder</div>
     <h2 class="mid anim" style="--d:.14s;margin-top:26px">Nothing repeats a third time for free.</h2>
   </div>
-  <div class="bar anim" data-step="1" style="position:absolute;left:160px;bottom:220px;width:270px;height:100px;background:oklch(0.55 0.14 258 / .10);border:1.5px solid var(--blue);border-radius:12px 12px 0 0;--d:0s"></div>
-  <div class="bar anim" data-step="1" style="position:absolute;left:470px;bottom:220px;width:270px;height:170px;background:oklch(0.56 0.13 162 / .10);border:1.5px solid var(--green);border-radius:12px 12px 0 0;--d:.08s"></div>
-  <div class="bar anim" data-step="2" style="position:absolute;left:780px;bottom:220px;width:270px;height:240px;background:oklch(0.62 0.13 82 / .12);border:1.5px solid var(--amber);border-radius:12px 12px 0 0;--d:0s"></div>
-  <div class="bar anim" data-step="2" style="position:absolute;left:1090px;bottom:220px;width:270px;height:310px;background:oklch(0.575 0.185 32 / .10);border:1.5px solid var(--accent);border-radius:12px 12px 0 0;--d:.08s"></div>
-  <div class="mono anim cb" data-step="1" style="position:absolute;left:190px;bottom:336px;font-size:21px;font-weight:500;--d:.18s">1</div>
-  <div class="anim" data-step="1" style="position:absolute;left:190px;bottom:372px;--d:.22s"><div class="mono fw500" style="font-size:24px">hotlist line</div><div class="fdesc" style="font-size:20px;margin-top:6px">a mistake becomes a rule</div></div>
-  <div class="mono anim cg" data-step="1" style="position:absolute;left:500px;bottom:406px;font-size:21px;font-weight:500;--d:.26s">2</div>
-  <div class="anim" data-step="1" style="position:absolute;left:500px;bottom:442px;--d:.3s"><div class="mono fw500" style="font-size:24px">library chapter</div><div class="fdesc" style="font-size:20px;margin-top:6px">a solution becomes reusable</div></div>
-  <div class="mono anim ca" data-step="2" style="position:absolute;left:810px;bottom:476px;font-size:21px;font-weight:500;--d:.18s">3</div>
-  <div class="anim" data-step="2" style="position:absolute;left:810px;bottom:512px;--d:.22s"><div class="mono fw500" style="font-size:24px">sub-skill</div><div class="fdesc" style="font-size:20px;margin-top:6px">extend an existing skill</div></div>
-  <div class="mono anim cacc" data-step="2" style="position:absolute;left:1120px;bottom:546px;font-size:21px;font-weight:500;--d:.26s">4</div>
-  <div class="anim" data-step="2" style="position:absolute;left:1120px;bottom:582px;--d:.3s"><div class="mono fw500" style="font-size:24px">new skill</div><div class="fdesc" style="font-size:20px;margin-top:6px">a workflow, with a trigger</div></div>
-  <div class="lead anim" data-step="3" style="position:absolute;left:160px;bottom:110px">You approve the upgrade. Every future session benefits.</div>
+  <div class="bar grow" data-step="1" style="position:absolute;left:160px;bottom:220px;width:270px;height:100px;background:oklch(0.55 0.14 258 / .10);border:1.5px solid var(--blue);border-radius:12px 12px 0 0"></div>
+  <div class="bar grow" data-step="2" style="position:absolute;left:470px;bottom:220px;width:270px;height:170px;background:oklch(0.56 0.13 162 / .10);border:1.5px solid var(--green);border-radius:12px 12px 0 0"></div>
+  <div class="bar grow" data-step="3" style="position:absolute;left:780px;bottom:220px;width:270px;height:240px;background:oklch(0.62 0.13 82 / .12);border:1.5px solid var(--amber);border-radius:12px 12px 0 0"></div>
+  <div class="bar grow" data-step="4" style="position:absolute;left:1090px;bottom:220px;width:270px;height:310px;background:oklch(0.575 0.185 32 / .10);border:1.5px solid var(--accent);border-radius:12px 12px 0 0"></div>
+  <div class="mono anim cb" data-step="1" style="position:absolute;left:190px;bottom:336px;font-size:21px;font-weight:500;--d:.4s">1</div>
+  <div class="anim" data-step="1" style="position:absolute;left:190px;bottom:372px;--d:.5s"><div class="mono fw500" style="font-size:24px">hotlist line</div><div class="fdesc" style="font-size:20px;margin-top:6px">a mistake becomes a rule</div></div>
+  <div class="mono anim cg" data-step="2" style="position:absolute;left:500px;bottom:406px;font-size:21px;font-weight:500;--d:.4s">2</div>
+  <div class="anim" data-step="2" style="position:absolute;left:500px;bottom:442px;--d:.5s"><div class="mono fw500" style="font-size:24px">library chapter</div><div class="fdesc" style="font-size:20px;margin-top:6px">a solution becomes reusable</div></div>
+  <div class="mono anim ca" data-step="3" style="position:absolute;left:810px;bottom:476px;font-size:21px;font-weight:500;--d:.4s">3</div>
+  <div class="anim" data-step="3" style="position:absolute;left:810px;bottom:512px;--d:.5s"><div class="mono fw500" style="font-size:24px">sub-skill</div><div class="fdesc" style="font-size:20px;margin-top:6px">extend an existing skill</div></div>
+  <div class="mono anim cacc" data-step="4" style="position:absolute;left:1120px;bottom:546px;font-size:21px;font-weight:500;--d:.4s">4</div>
+  <div class="anim" data-step="4" style="position:absolute;left:1120px;bottom:582px;--d:.5s"><div class="mono fw500" style="font-size:24px">new skill</div><div class="fdesc" style="font-size:20px;margin-top:6px">a workflow, with a trigger</div></div>
+  <div class="lead anim" data-step="5" style="position:absolute;left:160px;bottom:110px">You approve the upgrade. Every future session benefits.</div>
 </section>
 
 <!-- 10 · spec-driven -->
