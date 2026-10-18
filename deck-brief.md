@@ -29,7 +29,7 @@ Wan's brief: minimalist, fades, typing, a lot of motion. One direction, no menus
   * ambient: bounded glow bloom, caret blink; title carries the brain mark with one slow vermilion pulse ring
   * prefers-reduced-motion and `?still=1`: everything lands instantly, no waits
 
-## Story arc (14 slides)
+## Story arc (15 slides)
 
 1. Title: CV4, typed tagline
 2. The problem: your AI forgets everything
@@ -41,10 +41,11 @@ Wan's brief: minimalist, fades, typing, a lot of motion. One direction, no menus
 8. What is in the box (folder list)
 9. The ladder: hotlist, library, sub-skill, skill
 10. Spec-driven by design (dark: terminal + pipeline + converge)
-11. Proof: self-test + release rail (real versions)
+11. Proof: the test runs live (real ok lines, 20 checks)
 12. Start in one line (dark: message to your agent)
-13. Enrollment: three questions, then it exists
-14. Close: memory is the product
+13. Enrollment: four questions, then it exists
+14. Leaving: /remove-cv4 restores everything, hands the knowledge back
+15. Close: memory is the product
 
 ## Gates (mechanical, before any push)
 
