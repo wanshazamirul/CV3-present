@@ -150,6 +150,8 @@ h2.mid{
 .term .ghost.on{opacity:.5}
 .term .ln.cmd{visibility:hidden}
 .term .ln.cmd.on{visibility:visible}
+.term .okline{opacity:0;transition:opacity .45s ease}
+.term .okline.on{opacity:1}
 
 /* ---------- chrome ---------- */
 #bar{
@@ -571,43 +573,25 @@ body.still .anim{transition-duration:.3s,.3s}
   <div class="wrap">
     <div class="kicker anim fade" style="--d:.05s">proof it runs</div>
     <h2 class="mid anim" style="--d:.14s;margin-top:26px">It proves itself.</h2>
-    <div style="margin-top:52px;display:flex;align-items:center;gap:28px">
-      <span class="mono anim fade" style="--d:.4s;font-size:29px;font-weight:500;color:var(--ink)">bash tools/self-test.sh</span>
-      <span class="chip pass anim pop" data-step="1" style="padding:12px 24px;font-size:20px">RESULT: PASS</span>
+    <div class="term anim" style="position:absolute;left:130px;top:390px;width:760px">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <div class="scr" style="font-size:17px;line-height:1.6">
+      <div class="ln"><span class="p">$ </span><span id="s11t" data-cmd="bash tools/self-test.sh" data-speed="30"></span><span class="cur" id="s11c" style="display:none"></span></div>
+      <div class="ln okline" id="s11ok1"><span style="color:var(--green)">ok</span> bank registry matches folders</div>
+      <div class="ln okline" id="s11ok2"><span style="color:var(--green)">ok</span> session-load serves 7 files</div>
+      <div class="ln okline" id="s11ok3"><span style="color:var(--green)">ok</span> installer idempotent</div>
+      <div class="ln okline" id="s11ok4"><span style="color:var(--green)">ok</span> converge hook records once</div>
+      <div class="ln okline" id="s11ok5"><span style="color:var(--green)">ok</span> guard blocks member engine pushes</div>
+      <div class="ln okline" id="s11ok6"><span style="color:var(--green)">ok</span> scaffold restores a missing book key</div>
+      <div class="ln okline" id="s11res"><span style="color:var(--green)">RESULT: PASS</span> (20 checks)</div>
     </div>
-    <p class="lead anim" style="--d:.6s;margin-top:30px;max-width:1000px">A scratch copy. The whole engine, end to end. Then it throws itself away.</p>
   </div>
-  <svg class="lines" viewBox="0 0 1600 900" aria-hidden="true">
-    <line data-draw data-step="2" data-draw-dur="1100" x1="150" y1="640" x2="1450" y2="640"/>
-    <circle class="anim pop" data-step="2" style="--d:.55s" cx="150" cy="640" r="9" fill="var(--ink)"/>
-    <circle class="anim pop" data-step="3" style="--d:.1s" cx="475" cy="640" r="9" fill="var(--ink)"/>
-    <circle class="anim pop" data-step="4" style="--d:.1s" cx="800" cy="640" r="9" fill="var(--ink)"/>
-    <circle class="anim pop" data-step="5" style="--d:.1s" cx="1125" cy="640" r="9" fill="var(--ink)"/>
-    <circle class="anim pop" data-step="6" style="--d:.1s" cx="1450" cy="640" r="10" fill="var(--accent)"/>
-  </svg>
-  <div style="position:absolute;left:30px;top:668px;width:240px;text-align:center">
-    <div class="mono anim" data-step="2" style="--d:.65s;font-size:20px;font-weight:500">v0.4.1</div>
-    <div class="anim" data-step="2" style="--d:.75s;font-size:18px;color:var(--ink2);margin-top:6px">enrollment</div>
-  </div>
-  <div style="position:absolute;left:355px;top:668px;width:240px;text-align:center">
-    <div class="mono anim" data-step="3" style="--d:.15s;font-size:20px;font-weight:500">v0.5.0</div>
-    <div class="anim" data-step="3" style="--d:.25s;font-size:18px;color:var(--ink2);margin-top:6px">your skills win</div>
-  </div>
-  <div style="position:absolute;left:680px;top:668px;width:240px;text-align:center">
-    <div class="mono anim" data-step="4" style="--d:.15s;font-size:20px;font-weight:500">v0.6.0</div>
-    <div class="anim" data-step="4" style="--d:.25s;font-size:18px;color:var(--ink2);margin-top:6px">team edition</div>
-  </div>
-  <div style="position:absolute;left:1005px;top:668px;width:240px;text-align:center">
-    <div class="mono anim" data-step="5" style="--d:.15s;font-size:20px;font-weight:500">v0.6.5</div>
-    <div class="anim" data-step="5" style="--d:.25s;font-size:18px;color:var(--ink2);margin-top:6px">spec-driven</div>
-  </div>
-  <div style="position:absolute;left:1330px;top:668px;width:240px;text-align:center">
-    <div class="mono anim cacc" data-step="6" style="--d:.15s;font-size:20px;font-weight:500">v0.6.8</div>
-    <div class="anim" data-step="6" style="--d:.25s;font-size:18px;color:var(--ink2);margin-top:6px">current</div>
+  <div style="position:absolute;left:920px;top:560px">
+    <span id="s11chip" class="chip pass anim pop" style="padding:12px 24px;font-size:20px">20 checks · 0 failures</span>
   </div>
   <div style="position:absolute;left:130px;bottom:96px">
-    <div class="anim" data-step="7" style="font-size:25px;font-weight:500">The same test gates every stop on the rail.</div>
-    <div class="mono anim" data-step="7" style="--d:.15s;font-size:18px;font-weight:500;color:var(--ink2);margin-top:8px">full history in versions/CHANGELOG.md</div>
+    <div id="s11lead" class="lead anim" style="font-size:27px">A scratch copy proves the whole engine, then throws itself away.</div>
+  </div>
   </div>
 </section>
 
@@ -847,6 +831,7 @@ body.still .anim{transition-duration:.3s,.3s}
     clearTimers(st);
     st._tok = (st._tok || 0) + 1;
     if (st.el.id === "s10"){ s10reset(st); }
+    if (st.el.id === "s11"){ s11reset(st); }
     st.el.querySelectorAll("[data-step],[data-draw],[data-typed],.anim").forEach(deactivate);
     st.el.querySelectorAll(".haloGlow").forEach(function(el){ el.classList.remove("haloGlow"); });
     st.el.querySelectorAll(".hero").forEach(function(h){ h.style.opacity = "0"; h.style.offsetDistance = "0%"; });
@@ -875,6 +860,7 @@ body.still .anim{transition-duration:.3s,.3s}
     clearTimers(st);
     if (st.el.id === "s5"){ s5play(st); return; }
     if (st.el.id === "s10"){ s10play(st); return; }
+    if (st.el.id === "s11"){ s11play(st); return; }
     baseSlide(st);
     if (st.max === 0){ st.done = true; return; }
     if (reduced){
@@ -900,6 +886,7 @@ body.still .anim{transition-duration:.3s,.3s}
   function completeSlide(st){
     if (st.el.id === "s5"){ s5finish(st); return; }
     if (st.el.id === "s10"){ s10finish(st); return; }
+    if (st.el.id === "s11"){ s11finish(st); return; }
     clearTimers(st);
     for (var s = st.step + 1; s <= st.max; s++){ st.step = s; stepIn(st); }
     st.done = true;
@@ -1125,6 +1112,69 @@ body.still .anim{transition-duration:.3s,.3s}
     st.done = true;
   }
 
+  /* ---------- slide 11: the test runs live. Command types, real
+     ok lines stream, PASS lands, closer follows. */
+  function s11reset(st){
+    var sp = s5id("s11t");
+    sp._tok = (sp._tok || 0) + 1;
+    sp.textContent = "";
+    s5id("s11c").style.display = "none";
+    st.el.querySelectorAll(".okline").forEach(function(el){ el.classList.remove("on"); });
+  }
+  function s11play(st){
+    st.done = false;
+    var tok = (st._tok = (st._tok || 0) + 1);
+    s11reset(st);
+    st.el.querySelectorAll(".anim").forEach(function(b){ if (!b.id) b.classList.add("on"); });
+    if (reduced){ s11finish(st); return; }
+    function T(ms, fn){
+      st.timers.push(setTimeout(function(){
+        if (st._tok === tok && st.el.classList.contains("active")) fn();
+      }, ms));
+    }
+    var cmd = s5id("s11t").getAttribute("data-cmd");
+    var typeDur = cmd.length * 30 + 600;
+    var t = 600;
+    T(t, function(){
+      var sp = s5id("s11t");
+      sp._ops = [["t", cmd]];
+      sp._final = cmd;
+      s5id("s11c").style.display = "";
+      typeIn(sp);
+    });
+    t += typeDur + 300;
+    for (var n = 1; n <= 6; n++){
+      (function(k, at){
+        T(at, function(){ s5id("s11ok" + k).classList.add("on"); });
+      })(n, t);
+      t += 380;
+    }
+    T(t, function(){
+      var sp = s5id("s11t");
+      sp._tok = (sp._tok || 0) + 1;
+      sp.textContent = cmd;
+      s5id("s11c").style.display = "none";
+      s5id("s11res").classList.add("on");
+      s5id("s11chip").classList.add("on");
+    });
+    t += 500;
+    T(t, function(){ s5id("s11lead").classList.add("on"); st.done = true; });
+  }
+  function s11finish(st){
+    st._tok = (st._tok || 0) + 1;
+    clearTimers(st);
+    st.el.querySelectorAll(".anim").forEach(function(b){ if (!b.id) b.classList.add("on"); });
+    var sp = s5id("s11t");
+    var cmd = sp.getAttribute("data-cmd");
+    sp._tok = (sp._tok || 0) + 1;
+    sp.textContent = cmd;
+    s5id("s11c").style.display = "none";
+    st.el.querySelectorAll(".okline").forEach(function(el){ el.classList.add("on"); });
+    ["s11chip","s11lead"].forEach(function(id){ s5id(id).classList.add("on"); });
+    st.step = st.max;
+    st.done = true;
+  }
+
   /* ---------- chrome ---------- */
   function chrome(){
     var st = state[cur];
@@ -1211,7 +1261,7 @@ body.still .anim{transition-duration:.3s,.3s}
       s.querySelectorAll("[data-cmd]").forEach(function(el){ el.textContent = el.getAttribute("data-cmd"); });
       s.querySelectorAll("[data-draw]").forEach(function(el){ el.style.transition = "none"; el.style.strokeDashoffset = "0"; });
       s.querySelectorAll(".anim,[data-step]").forEach(function(el){ el.classList.add("on"); });
-      s.querySelectorAll(".ghost,.cmd").forEach(function(el){ el.classList.add("on"); });
+      s.querySelectorAll(".ghost,.cmd,.okline").forEach(function(el){ el.classList.add("on"); });
     });
   });
   window.addEventListener("afterprint", function(){
