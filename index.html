@@ -263,6 +263,9 @@ body.dark .hint{color:var(--dink2)}
 }
 @keyframes pulse{0%{opacity:0;transform:scale(.74)}16%{opacity:.8}100%{opacity:0;transform:scale(1.14)}}
 
+.haloGlow{animation:haloBreathe 1.7s ease-in-out}
+@keyframes haloBreathe{0%,100%{opacity:1}50%{opacity:.45}}
+
 .floatit{animation:floaty 7s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 
@@ -288,11 +291,11 @@ body.dark .hint{color:var(--dink2)}
 /* ---------- motion off ---------- */
 @media (prefers-reduced-motion: reduce){
   .dot,.orbit,.pulse{display:none !important}
-  .bloom,.floatit{animation:none !important}
+  .bloom,.floatit,.haloGlow{animation:none !important}
   .anim{transition-duration:.3s,.3s}
 }
 body.still .dot,body.still .orbit,body.still .pulse{display:none !important}
-body.still .bloom,body.still .floatit{animation:none !important}
+body.still .bloom,body.still .floatit,body.still .haloGlow{animation:none !important}
 body.still .anim{transition-duration:.3s,.3s}
 </style>
 <noscript><style>
@@ -801,6 +804,7 @@ body.still .anim{transition-duration:.3s,.3s}
     clearTimers(st);
     st._tok = (st._tok || 0) + 1;
     st.el.querySelectorAll("[data-step],[data-draw],[data-typed],.anim").forEach(deactivate);
+    st.el.querySelectorAll(".haloGlow").forEach(function(el){ el.classList.remove("haloGlow"); });
     st.el.querySelectorAll(".hero").forEach(function(h){ h.style.opacity = "0"; h.style.offsetDistance = "0%"; });
     st.step = 0;
     st.done = st.max === 0;
@@ -860,20 +864,60 @@ body.still .anim{transition-duration:.3s,.3s}
      only leaves once its halo is traced, and the far halo only
      spreads once the dot physically arrives (rAF arrival hook). */
   function s5id(id){ return document.getElementById(id); }
-  function s5travel(st, tok, el, dur, onArrive){
-    el.style.opacity = "1";
-    el.style.offsetDistance = "0%";
+  function s5pulseHalos(){
+    ["s5haloAG","s5haloRG","s5haloRB","s5haloAB"].forEach(function(id){
+      var el = s5id(id);
+      el.classList.remove("haloGlow");
+      void el.getBoundingClientRect();
+      el.classList.add("haloGlow");
+    });
+  }
+  /* dot pulls the line behind it: one rAF drives both, so the dot
+     always rides the drawing tip */
+  function s5ride(st, tok, hero, line, dur, onArrive){
+    var L = line._len || 1;
+    line.style.transition = "none";
+    line.style.strokeDashoffset = String(L);
+    hero.style.opacity = "1";
+    hero.style.offsetDistance = "0%";
+    void line.getBoundingClientRect();
     var t0 = null;
     function fr(ts){
       if (st._tok !== tok || !st.el.classList.contains("active")) return;
       if (t0 === null) t0 = ts;
       var p = Math.min(1,(ts-t0)/dur);
       var e = p<.5 ? 2*p*p : 1-Math.pow(2-2*p,2)/2;
-      el.style.offsetDistance = (e * 100) + "%";
+      line.style.strokeDashoffset = String(L*(1-e));
+      hero.style.offsetDistance = (e*100) + "%";
       if (p < 1) requestAnimationFrame(fr);
-      else onArrive();
+      else { line.style.transition = ""; onArrive(); }
     }
     requestAnimationFrame(fr);
+  }
+  /* finale: pulse the cards, ride both paths at once, pulse on
+     arrival, rest, repeat while the slide is alive */
+  function s5loop(st, tok){
+    function T(ms, fn){
+      st.timers.push(setTimeout(function(){
+        if (st._tok === tok && st.el.classList.contains("active")) fn();
+      }, ms));
+    }
+    function cycle(){
+      s5pulseHalos();
+      T(1500, function(){
+        var arrived = 0;
+        function one(hero){
+          return function(){
+            hero.style.opacity = "0";
+            arrived++;
+            if (arrived === 2){ s5pulseHalos(); T(2600, cycle); }
+          };
+        }
+        s5ride(st, tok, s5id("s5heroR"), s5id("s5lineR"), 1100, one(s5id("s5heroR")));
+        s5ride(st, tok, s5id("s5heroB"), s5id("s5lineB"), 1100, one(s5id("s5heroB")));
+      });
+    }
+    cycle();
   }
   function s5play(st){
     st.done = false;
@@ -885,36 +929,36 @@ body.still .anim{transition-duration:.3s,.3s}
         if (st._tok === tok && st.el.classList.contains("active")) fn();
       }, ms));
     }
-    var LINE = 650, HALO = 800, GAP = 250, MERGE = 300, TRAVEL = 1000, SPREAD = 800;
+    var HALO = 800, GAP = 250, RIDE = 1000, SPREAD = 800;
     var t = 500;
-    /* record: line + label, agent halo traced, hero out, travel, spread on repo */
-    T(t, function(){ playDraw(s5id("s5lineR")); s5id("s5labelR").classList.add("on"); }); t += LINE + GAP;
-    T(t, function(){ playDraw(s5id("s5haloAG")); }); t += HALO + GAP;
+    /* record: agent outline traced, dot pulls the line down, spread on repo */
+    T(t, function(){ playDraw(s5id("s5haloAG")); s5id("s5labelR").classList.add("on"); }); t += HALO + GAP;
     T(t, function(){
       var heroR = s5id("s5heroR");
-      s5travel(st, tok, heroR, TRAVEL, function(){
+      s5ride(st, tok, heroR, s5id("s5lineR"), RIDE, function(){
         heroR.style.opacity = "0";
         playDraw(s5id("s5haloRG"));
       });
-    }); t += MERGE + TRAVEL + SPREAD + GAP;
+    }); t += RIDE + SPREAD + GAP;
     /* recall: mirror image going up */
-    T(t, function(){ playDraw(s5id("s5lineB")); s5id("s5labelB").classList.add("on"); }); t += LINE + GAP;
-    T(t, function(){ playDraw(s5id("s5haloRB")); }); t += HALO + GAP;
+    T(t, function(){ playDraw(s5id("s5haloRB")); s5id("s5labelB").classList.add("on"); }); t += HALO + GAP;
     T(t, function(){
       var heroB = s5id("s5heroB");
-      s5travel(st, tok, heroB, TRAVEL, function(){
+      s5ride(st, tok, heroB, s5id("s5lineB"), RIDE, function(){
         heroB.style.opacity = "0";
         playDraw(s5id("s5haloAB"));
       });
-    }); t += MERGE + TRAVEL + SPREAD + GAP;
+    }); t += RIDE + SPREAD + GAP;
     T(t, function(){
       s5id("s5lead").classList.add("on");
       st.done = true;
+      s5loop(st, tok);
     });
   }
   function s5finish(st){
     st._tok = (st._tok || 0) + 1;
     clearTimers(st);
+    st.el.querySelectorAll(".haloGlow").forEach(function(el){ el.classList.remove("haloGlow"); });
     st.el.querySelectorAll(".anim").forEach(function(b){ if (!b.id) b.classList.add("on"); });
     ["s5lineR","s5haloAG","s5haloRG","s5lineB","s5haloRB","s5haloAB"].forEach(function(id){
       var el = s5id(id);
